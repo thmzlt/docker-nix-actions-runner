@@ -1,0 +1,14 @@
+version: "3"
+
+volumes:
+  nix:
+
+services:
+  actions-runner:
+    image: thmzlt/nix-actions-runner:latest
+    environment:
+      # GITHUB_ACCESS_TOKEN: 123456abcdef
+      # RUNNER_ORGANIZATION_URL: https://github.com/your-org
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - nix:/nix/
